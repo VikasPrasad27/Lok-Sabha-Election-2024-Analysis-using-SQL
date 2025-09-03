@@ -1,7 +1,7 @@
 /* 
 ===================================================================
  Project:        Indian Lok Sabha Election 2024 - SQL Analysis
- Author:         Mohan Kumar
+ Author:        Vikas Prasad
  Description:    This script analyzes the 2024 lok sabha election 
                  dataset using various SQL techniques including 
                  basic, intermediate, and advanced SQL queries.
@@ -175,74 +175,5 @@ WHERE state_name = 'Bihar'
 GROUP BY party_name
 ORDER BY Total_Votes DESC;
 
--- Margin of victory in each constituency
-
-WITH RankedVotes AS (
-    SELECT 
-        state_name,
-        constituency_name,
-        total_votes,
-        RANK() OVER (PARTITION BY constituency_name ORDER BY total_votes DESC) AS Vote_Rank
-    FROM election_result_2024
-)
-SELECT 
-    A.state_name,
-    A.constituency_name,
-    (A.total_votes - B.total_votes) AS Vote_Margin,
-    ROUND((A.total_votes - B.total_votes) * 100.0 / A.total_votes, 2) AS Percentage_Margin
-FROM RankedVotes A
-JOIN RankedVotes B
-    ON A.constituency_name = B.constituency_name
-    AND A.Vote_Rank = 1 AND B.Vote_Rank = 2
-ORDER BY Percentage_Margin DESC;
-
--- Candidates with closest victory margins (<1000 votes)
-
-WITH Rank_CTE AS (
-    SELECT 
-        state_name,
-        constituency_name,
-        candidate_name,
-        total_votes,
-        RANK() OVER (PARTITION BY constituency_name ORDER BY total_votes DESC) AS Vote_Rank
-    FROM election_result_2024
-)
-SELECT 
-    A.constituency_name,
-    A.state_name,
-    A.candidate_name AS Winner,
-    B.candidate_name AS Runner_Up,
-    (A.total_votes - B.total_votes) AS Margin
-FROM Rank_CTE A
-JOIN Rank_CTE B
-    ON A.constituency_name = B.constituency_name
-    AND A.Vote_Rank = 1 AND B.Vote_Rank = 2
-WHERE (A.total_votes - B.total_votes) < 1000;
-
--- Election summary table (Winner, Runner-up, Margin)
-
-WITH Election_CTE AS (
-    SELECT 
-        state_name,
-        constituency_name,
-        party_name,
-        candidate_name,
-        total_votes,
-        RANK() OVER (PARTITION BY constituency_name ORDER BY total_votes DESC) AS Vote_Rank
-    FROM election_result_2024
-)
-SELECT 
-    A.constituency_name,
-    A.state_name,
-    A.party_name AS Winner_Party,
-    B.party_name AS Runner_Up_Party,
-    (A.total_votes - B.total_votes) AS Vote_Margin,
-    ROUND((A.total_votes - B.total_votes) * 100.0 / A.total_votes, 2) AS Percentage_Margin,
-    A.candidate_name AS Winner_Candidate
-FROM Election_CTE A
-JOIN Election_CTE B
-    ON A.constituency_name = B.constituency_name
-    AND A.Vote_Rank = 1 AND B.Vote_Rank = 2
-ORDER BY Percentage_Margin DESC;
-
 ------------------------------- End ------------------------------------
+
