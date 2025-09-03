@@ -6,7 +6,7 @@ This project presents a comprehensive analysis of the **2024 Lok Sabha (Indian G
 
 ## 📌 Project Overview
 
-The **Lok Sabha Election 2024 Results Analysis** project leverages SQL queries and Power BI to understand India's democratic outcomes. The dataset contains detailed information on state-wise constituencies, political parties, vote counts (EVM and postal), winning margins, and candidates.
+The **Lok Sabha Election 2024 Results Analysis** project leverages SQL queries to understand India's democratic outcomes. The dataset contains detailed information on state-wise constituencies, political parties, vote counts (EVM and postal), winning margins, and candidates.
 
 The key focus areas include:
 - Party-wise seat distribution
