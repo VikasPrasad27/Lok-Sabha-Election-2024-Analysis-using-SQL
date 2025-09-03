@@ -1,6 +1,6 @@
-# 🗳️ Lok Sabha Election 2024 Results Analysis | SQL & Power BI
+# 🗳️ Lok Sabha Election 2024 Results Analysis | SQL
 
-This project presents a comprehensive analysis of the **2024 Lok Sabha (Indian General) Election** using **SQL** and **Power BI**. By transforming raw voting data into meaningful insights, we aim to uncover patterns in vote shares, party performance, and constituency-level results across India.
+This project presents a comprehensive analysis of the **2024 Lok Sabha (Indian General) Election** using **SQL**. By transforming raw voting data into meaningful insights, we aim to uncover patterns in vote shares, party performance, and constituency-level results across India.
 
 ---
 
@@ -21,8 +21,6 @@ The key focus areas include:
 
 - **SQL Server** — For querying, aggregation, and KPI extraction  
   👉 [SQL Code](./Election_Result_2024_Analysis.sql)
-- **Power BI** — For data visualization and dashboarding  
-  👉 [Dashboard Screenshot](./election_Result_2024_Analysis.png)
 - **Excel** — Raw dataset in spreadsheet format  
   👉 [Dataset File](./Dataset/election_result_2024.xlsx)
 
@@ -71,22 +69,9 @@ The dataset contains row-level data of each candidate contesting in every consti
 
 ---
 
-## 📊 Power BI Dashboard Features
-
-- **Top 5 Parties by Seats & Vote Share**
-- **State-wise Constituency Votes (Map)**
-- **EVM vs Postal Votes Overview**
-- **Victory Margins by Candidate**
-- **Interactive Filters by State & Constituency**
-- **Party-wise Constituency Table**
-
-> 📍 *See Power BI dashboard screenshots [here](./election_Result_2024_Analysis.png).*
-
----
-
 ## ✅ Conclusion
 
-This project highlights how structured query language (SQL) combined with Power BI can help decode complex election data into clear visual narratives. From identifying top-performing parties to analyzing vote shares and margins, this analysis provides valuable insights into the **2024 Indian General Elections**.
+This project highlights how structured query language (SQL) can help decode complex election data into clear visual narratives. From identifying top-performing parties to analyzing vote shares and margins, this analysis provides valuable insights into the **2024 Indian General Elections**.
 
 The approach can be scaled to analyze elections across years and regions, making it a powerful framework for political and public data analytics.
 
@@ -96,11 +81,10 @@ The approach can be scaled to analyze elections across years and regions, making
 
 ## 📬 Contact
 
-**Author**: Mohan Kumar  
-**Mail**: mohan122000kumar@gmail.com
+**Author**: Vikas Prasad
+**Mail**: vikasicem123@gmail.com
 
 ---
 
-⭐ *Feel free to fork or star this repo if you found it useful!*
 
 
